@@ -1,0 +1,104 @@
+NAME
+    App::furry - Mac OS X Cracking helper application.
+
+VERSION
+    This document describes furry version v0.3.
+
+SYNOPSIS
+        furry <recipe file> [optional override executables to patch]
+
+DESCRIPTION
+    Crack a list of files by a recipe.
+
+INSTALLATION
+    You need to have Mac::PropertyList, Getopt::LL and Config::Tiny
+    installed, if you don't you have to use cpan to install them:
+
+        sudo cpan Mac::PropertyList
+        sudo cpan Config::Tiny
+        sudo cpan Getopt::LL
+        sudo cpan File::BSED
+
+    Then you can install furry:
+
+        perl Makefile.PL
+        make
+        make test
+        sudo make install
+
+    After that you can use furry with
+
+        furry [-v|-k|-i] <recipe file> [optional override executables to crack]
+
+    where the flags are:
+
+        -v  - Verbose mode.
+        -k  - Keep temporary files.
+        -i  - Interactive. (wait for enter after each file).
+
+SUBROUTINES/METHODS
+DEPENDENCIES
+    *   Mac OS X >= 10.4
+
+    *   Getopt::LL
+
+    *   File::BSED
+
+    *   Mac::PropertyList
+
+    *   Config::Tiny
+
+DIAGNOSTICS
+CONFIGURATION AND ENVIRONMENT
+    This module requires no configuration file or environment variables.
+
+INCOMPATIBILITIES
+    None known.
+
+BUGS AND LIMITATIONS
+    No bugs have been reported.
+
+    Please report any bugs or feature requests to "App-furry@rt.cpan.org",
+    or through the web interface at <http://rt.cpan.org>.
+
+AUTHOR
+    Ask Solem, "ask@0x61736b.net".
+
+LICENSE AND COPYRIGHT
+    Copyright (c), 2007 Ask Solem "ask@0x61736b.net".
+
+    All rights reserved.
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself, either Perl version 5.8.6 or, at
+    your option, any later version of Perl 5 you may have available.
+
+DISCLAIMER OF WARRANTY
+    BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+    FOR THE SOFTWARE, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN
+    OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+    PROVIDE THE SOFTWARE "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+    EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE
+    ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH
+    YOU. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
+    NECESSARY SERVICING, REPAIR, OR CORRECTION.
+
+    IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+    WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+    REDISTRIBUTE THE SOFTWARE AS PERMITTED BY THE ABOVE LICENCE, BE LIABLE
+    TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL, OR
+    CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE
+    SOFTWARE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
+    RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
+    FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
+    SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+    DAMAGES.
+
+POD ERRORS
+    Hey! The above document had some coding errors, which are explained
+    below:
+
+    Around line 302:
+        =cut found outside a pod block. Skipping to next block.
+

@@ -1,0 +1,50 @@
+---
+name: App-furry
+version: 0.3
+author:
+  - 'Ask Solem <ASKSH@cpan.org>'
+abstract: Mac OS X Cracking helper application.
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  Config::Tiny: 0
+  Fatal: 0
+  File::BSED: 0.4
+  File::Basename: 0
+  File::Copy: 0
+  File::Spec: 0
+  File::Temp: 0
+  Getopt::LL: 0
+  List::Util: 0
+  Mac::PropertyList: 0
+  Scalar::Util: 0
+  version: 0
+build_requires:
+  Test::Simple: 0.42
+recommends:
+  IO::Capture::Stderr: 0
+  Perl::Critic: 1.051
+  Pod::Coverage: 0.18
+  Test::Exception: 0.25
+  Test::Kwalitee: 0.3
+  Test::Perl::Critic: 1
+  Test::Pod: 1.22
+  Test::Pod::Coverage: 1.08
+  Test::YAML::Meta: 0.04
+dynamic_config: 0
+provides:
+  App::furry:
+    file: lib/App/furry.pm
+    version: 0.3
+  App::furry::File:
+    file: lib/App/furry/File.pm
+    version: 0.3
+  App::furry::Recipe:
+    file: lib/App/furry/Recipe.pm
+    version: 0.3
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
+distribution_type: Application

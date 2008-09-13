@@ -1,0 +1,95 @@
+#!/usr/local/bin/perl
+# $Id: furry,v 1.3 2007/07/06 10:58:18 ask Exp $
+# $Source: /opt/CVS/furry/bin/furry,v $
+# $Author: ask $
+# $HeadURL$
+# $Revision: 1.3 $
+# $Date: 2007/07/06 10:58:18 $
+use strict;
+use warnings;
+use Cwd;
+use File::Spec;
+use File::Basename;
+use File::Copy          qw(move);
+use Getopt::LL          qw(getoptions);
+use English             qw(-no_match_vars);
+use App::furry;
+use App::furry::File;
+use App::furry::Recipe;
+use vars qw($VERSION);
+$VERSION = 0.3;
+$OUTPUT_AUTOFLUSH++;
+
+
+my $myself  = basename($PROGRAM_NAME);
+
+# Get arguments.
+my $options = getoptions();
+my ($in, @rest)    = @ARGV;
+die "Usage: $myself [-k|-v|-i] <recipe file>\n"
+    if not $in;
+
+my $opt_keep        = $options->{'-k'} ? 1 : 0;
+my $opt_verbose     = $options->{'-v'} ? 1 : 0;
+my $opt_interactive = $options->{'-i'} ? 1 : 0;
+
+my $recipe      = App::furry::Recipe->new($in);
+my $executables = $recipe->executables;
+my $patterns    = $recipe->patterns;
+
+my $furry       = App::furry->new({
+    debug           => $opt_verbose,
+    keep_temp_files => $opt_keep,
+    interactive     => $opt_interactive,
+});
+
+if (scalar @rest) {
+    $executables = \@rest;
+}
+
+EXE:
+for my $exe (@{ $executables }) {
+
+    # Find the executable
+    my $executable     = find_exe_in_bundle($exe);
+    next EXE if not $executable;
+
+    if (is_universal_binary($executable)) {
+
+        # Make temporary filenames for the disassembly files.
+        my $disass_ppc  = disassemble($executable, 'ppc') or next EXE;
+        my $disass_x86  = disassemble($executable, 'i386') or next EXE;
+
+        $furry->bake($disass_x86, $executable, $patterns,  'i386');
+        $furry->bake($disass_ppc, $executable, $patterns, 'ppc');
+        lipo_concat("${executable}i386", "${executable}ppc", $executable);
+
+        if (! $opt_keep) {
+            unlink "${executable}i386";
+            unlink "${executable}ppc";
+            unlink $disass_ppc;
+            unlink $disass_x86;
+        }
+
+    }
+    else {
+        my $arch = type_of_file($executable);
+
+        my $disass = disassemble($executable, $arch);
+
+        $furry->bake($disass, $executable, $patterns, $arch, 1);
+        unlink $executable;
+        move("${executable}${arch}", $executable);
+        unlink $disass;
+    }
+
+    my $exedir    =  $exe;
+       $exedir    =~ s{/$}{}xms;
+    my $cwd       = getcwd();
+    my $furry_out = File::Spec->catdir($cwd, 'furry.out');
+    # got to use system cp, so we're sure to keep resource forks etc.
+    system qq{cp -r "$exedir" "$furry_out/"};
+
+
+}
+

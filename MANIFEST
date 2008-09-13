@@ -1,0 +1,22 @@
+bin/furry
+bin/otx
+Build.PL
+examples/minimonsta.recipe
+examples/morphine.recipe
+examples/NI.recipe
+examples/ohmforce_installer_old.recipe
+examples/pro53.recipe
+examples/symptohm.recipe
+lib/App/furry.pm
+lib/App/furry/File.pm
+lib/App/furry/Recipe.pm
+Makefile.PL
+MANIFEST			This list of files
+META.yml
+README
+t/0-load.t
+t/filetype.t
+t/test-bin/i386
+t/test-bin/ppc
+t/test-bin/test.c
+t/test-bin/universal

@@ -1,0 +1,11 @@
+[what]
+au=/Library/Audio/Plug-Ins/Components/SomeCoolSynth.component
+vst=/Library/Audio/Plug-Ins/VST/SomeCoolSynth.vst
+rtas=/Library/Application Support/Digidesign/Plug-Ins/SomeCoolSynth.dpm
+app=/Applications/SomeCoolSynth.app
+
+[find sub SomeCoolSynthController::UnwantedMethod]
+replace preample to = i386:b800000000c3 ppc:386000004e800020
+
+[find sub SomeCoolSynthController::NetWorkAccess]
+replace preample to = i386:b800000000c3 ppc:386000004e800020
