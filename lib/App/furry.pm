@@ -183,7 +183,7 @@ __END__
 
 =head1 NAME
 
-App::furry - Mac OS X Cracking helper application.
+App::furry - Automatic patching of Mac OS X binaries using recipe files.
 
 =head1 VERSION
 
@@ -195,7 +195,7 @@ This document describes furry version v0.3.
 
 =head1 DESCRIPTION
 
-Crack a list of files by a recipe.
+Automatic patching of Mac OS X binaries using recipe files.
 
 =head1 INSTALLATION
 
@@ -216,7 +216,7 @@ Then you can install furry:
 
 After that you can use furry with
 
-    furry [-v|-k|-i] <recipe file> [optional override executables to crack]
+    furry [-v|-k|-i] <recipe file> [optional override executables to patch]
 
 where the flags are:
 
@@ -299,4 +299,3 @@ POSSIBILITY OF SUCH DAMAGES.
 
 # Local variables:
 # vim: ts=4
-=cut

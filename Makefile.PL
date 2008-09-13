@@ -6,8 +6,8 @@ WriteMakefile
           'INSTALLDIRS' => 'site',
           'NAME' => 'App::furry',
           'EXE_FILES' => [
-                           '/Users/ask/App-furry-0.2/bin/furry',
-                           '/Users/ask/App-furry-0.2/bin/otx'
+                           '/Users/ask/Development/App-furry-0.2/App-furry-0.3/bin/furry',
+                           '/Users/ask/Development/App-furry-0.2/App-furry-0.3/bin/otx'
                          ],
           'VERSION_FROM' => 'lib/App/furry.pm',
           'PREREQ_PM' => {

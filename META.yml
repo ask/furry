@@ -3,10 +3,8 @@ name: App-furry
 version: 0.3
 author:
   - 'Ask Solem <ASKSH@cpan.org>'
-abstract: Mac OS X Cracking helper application.
+abstract: Automatic patching of Mac OS X binaries using recipe files.
 license: perl
-resources:
-  license: http://dev.perl.org/licenses/
 requires:
   Config::Tiny: 0
   Fatal: 0
@@ -33,6 +31,11 @@ recommends:
   Test::Pod::Coverage: 1.08
   Test::YAML::Meta: 0.04
 dynamic_config: 0
+generated_by: Module::Build version 0.2806
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
+distribution_type: Application
 provides:
   App::furry:
     file: lib/App/furry.pm
@@ -43,8 +46,5 @@ provides:
   App::furry::Recipe:
     file: lib/App/furry/Recipe.pm
     version: 0.3
-generated_by: Module::Build version 0.2808
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
-distribution_type: Application
+resources:
+  license: http://dev.perl.org/licenses/

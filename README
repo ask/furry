@@ -1,5 +1,5 @@
 NAME
-    App::furry - Mac OS X Cracking helper application.
+    App::furry - Automatic patching of Mac OS X binaries using recipe files.
 
 VERSION
     This document describes furry version v0.3.
@@ -8,7 +8,7 @@ SYNOPSIS
         furry <recipe file> [optional override executables to patch]
 
 DESCRIPTION
-    Crack a list of files by a recipe.
+    Automatic patching of Mac OS X binaries using recipe files.
 
 INSTALLATION
     You need to have Mac::PropertyList, Getopt::LL and Config::Tiny
@@ -28,7 +28,7 @@ INSTALLATION
 
     After that you can use furry with
 
-        furry [-v|-k|-i] <recipe file> [optional override executables to crack]
+        furry [-v|-k|-i] <recipe file> [optional override executables to patch]
 
     where the flags are:
 
@@ -38,16 +38,11 @@ INSTALLATION
 
 SUBROUTINES/METHODS
 DEPENDENCIES
-    *   Mac OS X >= 10.4
-
-    *   Getopt::LL
-
-    *   File::BSED
-
-    *   Mac::PropertyList
-
-    *   Config::Tiny
-
+    * Mac OS X >= 10.4
+    * Getopt::LL
+    * File::BSED
+    * Mac::PropertyList
+    * Config::Tiny
 DIAGNOSTICS
 CONFIGURATION AND ENVIRONMENT
     This module requires no configuration file or environment variables.
@@ -58,14 +53,14 @@ INCOMPATIBILITIES
 BUGS AND LIMITATIONS
     No bugs have been reported.
 
-    Please report any bugs or feature requests to "App-furry@rt.cpan.org",
-    or through the web interface at <http://rt.cpan.org>.
+    Please report any bugs or feature requests to `App-furry@rt.cpan.org',
+    or through the web interface at http://rt.cpan.org.
 
 AUTHOR
-    Ask Solem, "ask@0x61736b.net".
+    Ask Solem, `ask@0x61736b.net'.
 
 LICENSE AND COPYRIGHT
-    Copyright (c), 2007 Ask Solem "ask@0x61736b.net".
+    Copyright (c), 2007 Ask Solem `ask@0x61736b.net'.
 
     All rights reserved.
 
@@ -94,11 +89,4 @@ DISCLAIMER OF WARRANTY
     FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
     SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
     DAMAGES.
-
-POD ERRORS
-    Hey! The above document had some coding errors, which are explained
-    below:
-
-    Around line 302:
-        =cut found outside a pod block. Skipping to next block.
 
